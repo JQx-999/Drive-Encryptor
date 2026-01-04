@@ -20,7 +20,7 @@ For Debian/Ubuntu:
 sudo apt install git e2fsprogs btrfs-progs dosfstools ntfs-3g
 ```
 <br></br>
-For fedora:
+For Fedora:
 ```
 sudo dnf install git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse
 ```
