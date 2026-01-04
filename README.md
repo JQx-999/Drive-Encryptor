@@ -12,6 +12,23 @@ Backup every thing from the target drive that you wanna encrypt. This code is de
 <br> </br>
 **How to use it? :**
 <br> This script will first ask about the partition. Suppose I want to encrypt sda2. So I will type "sda2" and nothing else. Then it will open the cryptsetup to encrypt the drive. Type "YES" as prompted. Choose a STRONG password for your drive. It will ask again for the passowrd to open the drive. Choose the specific file format if prompted. BACKUP the header file (Type Y to continue). Finished. Now disconnect the drive and reconnect the drive and use it as intended. </br>
+<br> </br>
+**Required Dependencies:**
+<br> </br>
+For Debian/Ubuntu: 
+```
+sudo apt install git e2fsprogs btrfs-progs dosfstools ntfs-3g
+```
+<br></br>
+For fedora:
+```
+sudo dnf install git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse
+```
+<br> </br>
+For Arch:
+```
+sudo pacman -Sy git e2fsprogs btrfs-progs dosfstools ntfs-3g
+```
 
 ## Use the following code to use it.
 ```
