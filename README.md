@@ -1,4 +1,4 @@
-# Drive-EncryptorAuthor: JQx 
+# Drive-Encryptor
 Encrypt your drive 
 ![Screenshot](./Assets/img.png)
 ## Can only be used in Linux
