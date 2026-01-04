@@ -57,14 +57,15 @@ echo ''
 echo "(Important) Do you wanna backup header file? y or Y"
 read b
 if [ $b == 'y' ]; then
-	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file header.img
+	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file ~/header.img
 elif [ $b == 'Y' ]; then
-	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file header.img
+	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file ~/header.img
 else
 	break
 fi
 echo ""
 echo "Script completed successfully!"
-sudo chmod -R 777 header.img
-cd .. && cd ..
+sudo chmod -R 777 ~/header.img
+cd ..
+cd ..
 rm -rf Drive-Encryptor
