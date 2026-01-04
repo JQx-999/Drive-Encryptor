@@ -17,17 +17,17 @@ Backup every thing from the target drive that you wanna encrypt. This code is de
 <br> </br>
 For Debian/Ubuntu: 
 ```
-sudo apt install git e2fsprogs btrfs-progs dosfstools ntfs-3g
+sudo apt install cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g
 ```
 <br></br>
 For Fedora:
 ```
-sudo dnf install git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse
+sudo dnf install cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g fuse
 ```
 <br> </br>
 For Arch:
 ```
-sudo pacman -Sy git e2fsprogs btrfs-progs dosfstools ntfs-3g
+sudo pacman -Sy cryptsetup git e2fsprogs btrfs-progs dosfstools ntfs-3g
 ```
 <br></br>
 
