@@ -69,3 +69,4 @@ sudo chmod -R 777 ~/header.img
 cd ..
 cd ..
 rm -rf Drive-Encryptor
+cd
