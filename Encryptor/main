@@ -17,7 +17,7 @@ echo "Required: cryptsetup, e2fsprogs, btrfs-progs, dosfstools, ntfs3"
 echo ""
 echo "Partitions/Drives:  "
 echo ""
-lsblk -l
+lsblk -l | awk '$6 == "part" {print $1}'
 lsblk -l > part.txt
 echo ""
 echo "Which partition do you wanna modify? (Type it from the list)"
