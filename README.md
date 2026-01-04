@@ -3,6 +3,7 @@ Encrypt your drive
 ## Can only be used in Linux
 
 Author: JQx 
+<br> </br>
 You are free to reproduce, contibute, change, modify this code.
 
 **Preparation:**
