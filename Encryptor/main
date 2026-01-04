@@ -55,6 +55,7 @@ echo ""
 echo "Successfully Encrypted /dev/$p"
 echo ''
 echo "(Important) Do you wanna backup header file? y or Y"
+echo "It will be saved in Home directory."
 read b
 if [ $b == 'y' ]; then
 	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file ~/header.img
