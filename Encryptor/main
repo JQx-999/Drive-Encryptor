@@ -27,7 +27,7 @@ echo "Encrypting..."
 sudo cryptsetup luksFormat /dev/$p
 sudo cryptsetup luksOpen /dev/$p EDrive
 echo ""
-echo "Choose format for your drive?"
+echo "Choose format for your drive? (Type 1, 2, 3 ,4)"
 echo ""
 echo "1. ext4 (Required: e2fsprogs)"
 echo "2. btrfs (Required: btrfs-progs)"
