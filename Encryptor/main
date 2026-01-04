@@ -66,6 +66,5 @@ fi
 echo ""
 echo "Script completed successfully!"
 sudo chmod -R 777 header.img
-cd ..
-cd ..
-rm Drive-Encryptor
+cd .. && cd ..
+rm -rf Drive-Encryptor
