@@ -1,0 +1,67 @@
+#!/bin/bash
+
+
+echo ""
+echo "    ___      _               __                            _             
+   /   \_ __(_)_   _____    /__\ __   ___ _ __ _   _ _ __ | |_ ___  _ __ 
+  / /\ / '__| \ \ / / _ \  /_\| '_ \ / __| '__| | | | '_ \| __/ _ \| '__|
+ / /_//| |  | |\ V /  __/ //__| | | | (__| |  | |_| | |_) | || (_) | |   
+/___,' |_|  |_| \_/ \___| \__/|_| |_|\___|_|   \__, | .__/ \__\___/|_|   
+                                               |___/|_|                  "
+echo ""
+echo "Drive Encryptor version 1.0"
+echo "This script WILL DESTROY the partition/drive. BE PREPARED."
+echo "Unmount the drive before use"
+echo "Required: cryptsetup, e2fsprogs, btrfs-progs, dosfstools, ntfs3"
+echo ""
+echo "Partitions/Drives:  "
+echo ""
+lsblk -l
+lsblk -l > part.txt
+echo ""
+echo "Which partition do you wanna modify? (Type it from the list)"
+read p
+echo ""
+echo "Encrypting..."
+sudo cryptsetup luksFormat /dev/$p
+sudo cryptsetup luksOpen /dev/$p EDrive
+echo ""
+echo "Choose format for your drive?"
+echo ""
+echo "1. ext4 (Required: e2fsprogs)"
+echo "2. btrfs (Required: btrfs-progs)"
+echo "3. fat32 (Required: dosfstools)"
+echo "4. ntfs (Required: ntfs3)"
+echo ""
+read s
+if [ $s == 1 ]; then
+	sudo mkfs.ext4 /dev/mapper/EDrive
+elif [ $s == 2 ]; then
+	sudo mkfs.btrfs /dev/mapper/EDrive
+elif [ $s == 3 ]; then
+	sudo mkfs.fat -F 32 /dev/mapper/EDrive
+elif [ $s == 4 ]; then
+	sudo mkfs.ntfs -f /dev/mapper/EDrive
+else
+	echo "wrong option"
+fi
+sudo mkdir /mnt/EDrive && sudo mount /dev/mapper/EDrive /mnt/EDrive
+sudo chmod -R 777 /mnt/EDrive
+sudo umount /mnt/EDrive
+sudo rm -rf /mnt/EDrive
+sudo cryptsetup luksClose EDrive
+echo ""
+echo "Successfully Encrypted /dev/$p"
+echo ''
+echo "(Important) Do you wanna backup header file? y or Y"
+read b
+if [ $b == 'y' ]; then
+	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file header.img
+elif [ $b == 'Y' ]; then
+	sudo cryptsetup luksHeaderBackup /dev/$p --header-backup-file header.img
+else
+	break
+fi
+echo ""
+echo "Script completed successfully!"
+sudo chmod -R 777 header.img
