@@ -29,6 +29,7 @@ For Arch:
 ```
 sudo pacman -Sy git e2fsprogs btrfs-progs dosfstools ntfs-3g
 ```
+<br></br>
 
 ## Use the following code to use it.
 ```
