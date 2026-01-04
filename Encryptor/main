@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+clear
 
 echo ""
 echo "    ___      _               __                            _             
