@@ -20,14 +20,14 @@ echo ""
 lsblk -l | awk '$6 == "part" {print $1 " : " $4}'
 lsblk -l > part.txt
 echo ""
-echo -e "\e[1;32mWhich partition do you wanna modify? (Type it from the list\e[0m"
+echo "Which partition do you wanna modify? (Type it from the list)"
 read p
 echo ""
 echo "Encrypting..."
 sudo cryptsetup luksFormat /dev/$p
 sudo cryptsetup luksOpen /dev/$p EDrive
 echo ""
-echo -e "\e[1;32mChoose format for your drive? (Type 1, 2, 3 ,4)\e[0m"
+echo "Choose format for your drive? (Type 1, 2, 3 ,4)"
 echo ""
 echo "1. ext4 (Required: e2fsprogs)"
 echo "2. btrfs (Required: btrfs-progs)"
